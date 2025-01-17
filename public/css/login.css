@@ -1,0 +1,255 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #4CAF50, #0099CC);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Animación de fondo */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+    animation: rotateBG 10s linear infinite;
+    z-index: -1;
+    transform-origin: center;
+}
+
+.error-message {
+    color: red;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: block; /* Asegura que se vea como un bloque completo */
+}
+
+
+/* Rotación suave del fondo */
+@keyframes rotateBG {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Contenedor principal */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caja de login */
+.login-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.login-box h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #0099CC;
+}
+
+.subtext {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Botón principal */
+.btn-submit {
+    background: linear-gradient(135deg, #0099CC, #4CAF50);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de cerrar */
+.btn-cancel {
+    background: #FF5722;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.modal-content h2 {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.modal-content input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+.modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Separador */
+.separator {
+    margin: 20px 0;
+}
+
+.separator hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+
+/* Texto del pie */
+.footer-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.footer-text a {
+    color: #0099CC; /* Amarillo brillante para que destaque */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-text a:hover {
+    color: #0099CC; /* Un amarillo más cálido al pasar el cursor */
+    text-shadow: 0px 3px 5px rgba(255, 235, 59, 0.5); /* Sombra para resaltar */
+    text-decoration: underline;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}

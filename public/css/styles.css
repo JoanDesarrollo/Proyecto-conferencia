@@ -1,0 +1,299 @@
+/* public/css/styles.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #4CAF50, #009688);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1rem;
+    color: #E8F5E9;
+}
+
+/* Formulario */
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Por defecto dos columnas */
+    gap: 20px;
+    align-items: center;
+    border: 2px solid #4CAF50;
+}
+
+form h1 {
+    color: #009688;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    grid-column: span 2;
+    font-weight: bold;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+form div.full-width {
+    grid-column: span 2;
+}
+
+form label {
+    font-weight: 600;
+    color: #009688;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="file"],
+form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus,
+form select:focus {
+    border-color: #4CAF50;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+form small {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Botones de archivo */
+form input[type="file"] {
+    padding: 10px;
+    border: none;
+    font-size: 0.9rem;
+    color: #666;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #4CAF50, #009688);
+    border: none;
+    padding: 8px 12px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form input[type="file"]::file-selector-button:hover {
+    background: linear-gradient(135deg, #009688, #4CAF50);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Botón de registrar */
+form button[type="submit"], button#registrarBtn {
+    grid-column: span 2;
+    width: 100%;
+    margin: 15px auto 0 auto;
+    padding: 12px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #4CAF50, #009688);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+form button[type="submit"]:hover, button#registrarBtn:hover {
+    background: linear-gradient(135deg, #009688, #4CAF50);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Botones estilizados para abrir/capturar cámara */
+.styled-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    background: #009688; /* Mismo color que los labels */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.styled-button:hover {
+    background: #00796b; /* Un poco más oscuro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #E8F5E9;
+    font-size: 0.8rem;
+}
+
+/* Responsividad mejorada */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+        gap: 15px;
+    }
+
+    form div#foto_persona_div,
+    form div#cedula_frontal_div,
+    form div#cedula_posterior_div {
+        grid-column: span 2;
+    }
+}
+
+
+/* Estilos para el Modal de OTP */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Siempre centrado */
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.modal-content {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    color: #009688;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.otp-input {
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.otp-input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Animación para mostrar el modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Botón dentro del modal */
+.styled-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #4CAF50, #009688);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.styled-button:hover {
+    background: linear-gradient(135deg, #009688, #4CAF50);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
